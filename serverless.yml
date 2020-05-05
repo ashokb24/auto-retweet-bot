@@ -37,8 +37,8 @@ functions:
       - schedule:
           enabled: true
           name: retweetUserMessage
-          description: 'Every 30 minutes headlines from Times of India scheduler'
-          rate: cron(0/30 * * * ? *)
+          description: 'Bot runs at every day 4 am UTC timezone ( IST 8:30 AM )'
+          rate: cron(0 4 * * ? *)
           input:
             retweet_from_user_id: 'the-times-of-india'
             interested_hashtag: '#SadhguruQuotes'
