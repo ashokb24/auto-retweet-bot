@@ -41,8 +41,8 @@ functions:
           rate: cron(0 4 * * ? *)
           input:
             retweet_from_user_id: 'the-times-of-india'
-            interested_hashtag: '#SadhguruQuotes'
-
+            tweet_hashtag: '#SadhguruQuotes'
+            time_line_count: 5
 plugins:
   - serverless-python-requirements
 
