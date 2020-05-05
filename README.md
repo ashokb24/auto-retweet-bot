@@ -17,4 +17,4 @@ his/her twitter account using twython API Python library. Bot accepts the below 
 - retweet_from_user_id : Twitter User Id from which you have to re-tweet a tweet. Hashtag will be used to filter the tweet in you are interested from the user timeline list
 - time_line_count : User Time line count to retrieve to user time line of the given user( eg : If you pass 5, it will be retrieve the top 5 user time line from a given user a
 - tweet_hashtag : Hastag associated with the tweet which you want to re-tweet in case if any. Ind then from the results obtained, bot will identify the tweet which you are intereste)
-    # eg : If you are following twitter user ( Mr. XYZ ) who tweets a quote everyday with a hashtag, this bot can help you in finding that tweet using the twitter username,hashtag and can help you in re-tweeting the tweet from your twitter user account.
+    Eg : If you are following twitter user ( Mr. XYZ ) who tweets a quote everyday with a hashtag, this bot can help you in finding that tweet using the twitter username,hashtag and can help you in re-tweeting the tweet from your twitter user account.
