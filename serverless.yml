@@ -1,0 +1,48 @@
+# Welcome to Serverless!
+#
+# This file is the main config file for your service.
+# It's very minimal at this point and uses default values.
+# You can always add more config options for more control.
+# We've included some commented out config examples here.
+# Just uncomment any of them to get that config option.
+#
+# For full config options, check the docs:
+#    docs.serverless.com
+#
+# Happy Coding!
+
+service: auto-retweet-bot
+# app and org for use with dashboard.serverless.com
+#app: your-app-name
+#org: your-org-name
+
+# You can pin your service to only deploy with a specific Serverless version
+# Check out our docs for more details
+# frameworkVersion: "=X.X.X"
+
+provider:
+  name: aws
+  runtime: python3.8
+  profile: serverless-admin
+  region: ap-south-1
+  environment:
+    CONSUMER_KEY: EeGLxQ6lo4MzZ4k7pZQIRxmJa
+    CONSUMER_SECRET: csO2AgepbdMi8MKTxr7kGqRIdaBvzSXJcxPuClpXIMaT4GqeVy
+    OAUTH_TOKEN: 840889837-QK0gIxZnzLSLBaHhSTpz2GbAAzCsXDtV6rDoZ3Xr
+    OAUTH_TOKEN_SECRET: hZq8AtKlfhOtQM3Cu1hQ7TFvzLuJPNbBnhNm9YhtXsl2Z
+functions:
+  re_tweet_a_user_status:
+    handler: retweets/retweets.re_tweet_a_user_status
+    events:
+      - schedule:
+          enabled: true
+          name: retweetUserMessage
+          description: 'Every 30 minutes headlines from Times of India scheduler'
+          rate: cron(0/30 * * * ? *)
+          input:
+            retweet_from_user_id: 'the-times-of-india'
+            interested_hashtag: '#SadhguruQuotes'
+
+plugins:
+  - serverless-python-requirements
+
