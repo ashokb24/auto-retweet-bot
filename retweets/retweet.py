@@ -25,11 +25,5 @@ def re_tweet_a_user_status(event, context):
         for user_time_line in user_timelines:
             if interested_hashtag in user_time_line['full_text']:
                 twitter.retweet(status="RETWEET FROM MY PERSONAL BOT ASSISTANT", id=user_time_line['id'])
-    else:
-        user_timelines = twitter.get_user_timeline(screen_name=retweet_from_user_id, count=5, trim_user="t",
-                                                   exclude_replies="true", include_rts="false")
-        for user_time_line in user_timelines:
-            if interested_hashtag in user_time_line['text']:
-                twitter.retweet(status="RETWEET FROM MY PERSONAL BOT ASSISTANT", id=user_time_line['id'])
 
     return "BOT FINISHED RE-TWEET SUCCESSFULLY"
