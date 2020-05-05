@@ -12,10 +12,12 @@ The project is hosted on AWS Cloud infra in the form of serverless components. A
 - Solution can use any open source library wherever applicable.
 
 # RETWEET Serverless Service
-Auto Service runs for every day at morning 4 AM at UTC timezone ( IST 8.30 AM) 30 mins and retrieves the given user timeline from 
+Auto Retweet serverless bot runs for every day at morning 4 AM at UTC timezone ( IST 8.30 AM) 30 mins and retrieves the given user timeline from 
 his/her twitter account using twython API Python library. Bot accepts the below parameters to operate
 - retweet_from_user_id : Twitter User Id from which you have to re-tweet a tweet. Hashtag will be used to filter the tweet in you are interested from the user timeline list
 - time_line_count : User Time line count to retrieve to user time line of the given user( eg : If you pass 5, it will be retrieve the top 5 user time line from a given user a
-- tweet_hashtag : Hastag associated with the tweet which you want to re-tweet in case if any. Ind then from the results obtained, bot will identify the tweet which you are intereste)
+- tweet_hashtag : Hashtag associated with the tweet which you want to re-tweet in case if any. Ind then from the results obtained, bot will identify the tweet which you are intereste)
 
-Eg : If you are following twitter user ( Mr. XYZ ) who tweets a quote everyday with a hashtag, this bot can help you in finding that tweet using the twitter username,hashtag and can help you in re-tweeting the tweet from your twitter user account.
+Eg : If you are following twitter user ( Mr. XYZ ) who tweets a quote everyday with a hashtag, this bot can help you in finding that tweet using the twitter username,hashtag and can help you in re-tweeting the tweet from your twitter user account. Considering the person you follow and his/her tweet activity, you can configure the CRON timings at your convienence.
+
+![Image description](images/SolutionImage.JPG)
