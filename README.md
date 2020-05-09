@@ -29,16 +29,35 @@ Eg : If you are following twitter user ( Mr. XYZ ) who tweets a quote everyday w
      2. API Secret & API Secret Token : The below two and the consumer credentials are required in order to tweet, re-tweet and wherever posting the data to twitter is concerned.
         a. API Secret
         b. API Secret Token
-- Since consumer key, Consumer Key Secret, API Secret and API Secret Token are considered as Secrets required for authentication and they are deemed as user-specific data, I have not mentioned my credentials in serverless.yml file. If you want to give to try this bot, its your responsibility to generate the secrets and mention the same in serverless.yml as environmental variables by replacing the text GENERATE_AND_REPLACE_ACTUAL_VALUE
+- I have written a separate Python project(https://github.com/ashokb24/s3-bucket-creator) to write these secrets to my own S3 bucket. Briefly, this project can
+    1. Create a S3 Bucket
+    2. Upload a file to a given path with AES-256 encryption
+ 
+ Note: Whilst I will come up with a dedicated jenkins for my usage, I have used boto3 python package in this project to interact with S3 service.
+
+Python code to retrevies the secrets from S3
+```python
+    s3client = boto3.client('s3', region_name=region_name)
+    fileobj = s3client.get_object(Bucket=bucket_name, Key=file_name)
+    filedata = fileobj['Body'].read()
+    contents = filedata.decode('utf-8')
+```
+Code to call Twython package to get the user time line 
 ```python
         twitter = Twython(app_key, app_secret, oauth_token, oauth_token_secret)
 
     if len(interested_hashtag) != 0:
         user_timelines = twitter.get_user_timeline(screen_name=retweet_from_user_id, count=time_line_count, trim_user="t",
                                                   exclude_replies="true", include_rts="false", tweet_mode="extended")
-        for user_time_line in user_timelines:
+```
+Code to iterate the usertime line and retrieve the tweet which contains the hashtag you are interested
+```python
+ for user_time_line in user_timelines:
             if interested_hashtag in user_time_line['full_text']:
                 twitter.retweet(status="RETWEET FROM MY PERSONAL BOT ASSISTANT", id=user_time_line['id'])
 ```
 
-![Image description](images/SolutionImage.JPG)
+![Image description](images/SolutionImageV2.JPG)
+
+# Results
+![Image description](images/Results.JPG)
