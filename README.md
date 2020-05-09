@@ -60,6 +60,5 @@ Code to iterate the usertime line and retrieve the tweet which contains the hash
 ![Image description](images/SolutionImageV2.JPG)
 
 # Results
-Below is tweet I re-tweeted using this bot, where in I have re-tweeted a tweet from @SadhguruJV which has a hashtag 
-'#SadhguruQuotes'
+Below is tweet I re-tweeted using this bot, where in I have re-tweeted a tweet from @SadhguruJV which has a hashtag **#SadhguruQuotes**
 ![Image description](images/Results.JPG)
