@@ -26,21 +26,18 @@ provider:
   profile: serverless-admin
   region: ap-south-1
   environment:
-    CONSUMER_KEY: <GENERATE_AND_REPLACE_ACTUAL_VALUE>
-    CONSUMER_SECRET: <GENERATE_AND_REPLACE_ACTUAL_VALUE>
-    OAUTH_TOKEN: <GENERATE_AND_REPLACE_ACTUAL_VALUE>
-    OAUTH_TOKEN_SECRET: <GENERATE_AND_REPLACE_ACTUAL_VALUE>
-    DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
+    AUTO_RETWEET_BUCKET: "my-twitter-secrets-bucket"
+    FILE_NAME: "twitter_creds.json"
+    S3_REGION: "ap-south-1"
   iamRoleStatements:
     - Effect: Allow
       Action:
-        - dynamodb:Query
-        - dynamodb:Scan
-        - dynamodb:GetItem
-        - dynamodb:PutItem
-        - dynamodb:UpdateItem
-        - dynamodb:DeleteItem
-      Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}"
+        - s3:ListBucket
+      Resource: "arn:aws:s3:::${self:provider.environment.AUTO_RETWEET_BUCKET}"
+    - Effect: Allow
+      Action:
+        - s3:*Object
+      Resource: "arn:aws:s3:::${self:provider.environment.AUTO_RETWEET_BUCKET}/*"
 functions:
   re_tweet_a_user_status:
     handler: retweets/retweet.re_tweet_a_user_status

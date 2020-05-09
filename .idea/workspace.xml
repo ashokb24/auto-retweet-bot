@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e39f168-d580-409c-a105-5b5bb8e245a4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Rishi.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/retweets/retweet.py" beforeDir="false" afterPath="$PROJECT_DIR$/retweets/retweet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serverless.yml" beforeDir="false" afterPath="$PROJECT_DIR$/serverless.yml" afterDir="false" />
@@ -89,25 +90,25 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="117" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1588583221468" />
-    <state width="1344" height="171" key="GridCell.Tab.0.bottom" timestamp="1588666448568">
+    <state width="1344" height="171" key="GridCell.Tab.0.bottom" timestamp="1589048616845">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1344" height="171" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588666448568" />
-    <state width="1344" height="171" key="GridCell.Tab.0.center" timestamp="1588666448568">
+    <state width="1344" height="171" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1589048616845" />
+    <state width="1344" height="171" key="GridCell.Tab.0.center" timestamp="1589048616845">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1344" height="171" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1588666448568" />
-    <state width="1344" height="171" key="GridCell.Tab.0.left" timestamp="1588666448568">
+    <state width="1344" height="171" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1589048616845" />
+    <state width="1344" height="171" key="GridCell.Tab.0.left" timestamp="1589048616845">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1344" height="171" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1588666448568" />
-    <state width="1344" height="171" key="GridCell.Tab.0.right" timestamp="1588666448568">
+    <state width="1344" height="171" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1589048616845" />
+    <state width="1344" height="171" key="GridCell.Tab.0.right" timestamp="1589048616845">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1344" height="171" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1588666448568" />
-    <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589031096337">
+    <state width="1344" height="171" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1589048616845" />
+    <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589035523571">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1589031096337" />
+    <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1589035523571" />
   </component>
 </project>
