@@ -18,7 +18,8 @@ his/her twitter account using twython API Python library. Bot accepts the below 
 - time_line_count : User Time line count to retrieve to user time line of the given user( eg : If you pass 5, it will be retrieve the top 5 user time line from a given user a
 - tweet_hashtag : Hashtag associated with the tweet which you want to re-tweet in case if any. Ind then from the results obtained, bot will identify the tweet which you are intereste)
 
-Eg : If you are following twitter user ( Mr. XYZ ) who tweets a quote everyday with a hashtag, this bot can help you in finding that tweet using the twitter username,hashtag and can help you in re-tweeting the tweet from your twitter user account. Considering the person you follow and his/her tweet activity, you can configure the CRON timings at your convienence.
+**Note : Reason for scheduling the bot at morning 4 am UTC ( IST 8.30 AM ) is because, Sadhguru's daily quote will be tweeted at morning 8.15 AM everyday. Hence I have scheduled this bot to run at 8:30 AM everyday to re-tweet the quote.**
+Eg : If you are following twitter user ( Mr. XYZ ) who tweets a quote everyday with a hashtag, this bot can help you in finding that tweet using the twitter username, hashtag and can help you in re-tweeting the tweet from your twitter user account. Considering the person you follow and his/her tweet activity, you can configure the CRON timings at your convienence.
 # Using twython to integrate with twitter
 - You should have a valid twitter account
 - Register your twitter account with twitter developer portal (https://developer.twitter.com)
