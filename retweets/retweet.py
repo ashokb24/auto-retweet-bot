@@ -7,10 +7,8 @@ def re_tweet_a_user_status(event, context):
     event_string = json.dumps(event)
     data = json.loads(event_string)
     retweet_from_user_id = data['retweet_from_user_id']
-    interested_hashtag = data['interested_hashtag']
+    interested_hashtag = data['tweet_hashtag']
     time_line_count = data['time_line_count']
-    print("retweet user id " +retweet_from_user_id)
-    print("hashtag passed "+interested_hashtag)
 
     app_key = os.environ['CONSUMER_KEY']
     app_secret = os.environ['CONSUMER_SECRET']

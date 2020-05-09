@@ -26,13 +26,24 @@ provider:
   profile: serverless-admin
   region: ap-south-1
   environment:
-    CONSUMER_KEY: EeGLxQ6lo4MzZ4k7pZQIRxmJa
-    CONSUMER_SECRET: csO2AgepbdMi8MKTxr7kGqRIdaBvzSXJcxPuClpXIMaT4GqeVy
-    OAUTH_TOKEN: 840889837-QK0gIxZnzLSLBaHhSTpz2GbAAzCsXDtV6rDoZ3Xr
-    OAUTH_TOKEN_SECRET: hZq8AtKlfhOtQM3Cu1hQ7TFvzLuJPNbBnhNm9YhtXsl2Z
+    CONSUMER_KEY: <GENERATE_AND_REPLACE_ACTUAL_VALUE>
+    CONSUMER_SECRET: <GENERATE_AND_REPLACE_ACTUAL_VALUE>
+    OAUTH_TOKEN: <GENERATE_AND_REPLACE_ACTUAL_VALUE>
+    OAUTH_TOKEN_SECRET: <GENERATE_AND_REPLACE_ACTUAL_VALUE>
+    DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}"
 functions:
   re_tweet_a_user_status:
-    handler: retweets/retweets.re_tweet_a_user_status
+    handler: retweets/retweet.re_tweet_a_user_status
     events:
       - schedule:
           enabled: true
@@ -40,9 +51,8 @@ functions:
           description: 'Bot runs at every day 4 am UTC timezone ( IST 8:30 AM )'
           rate: cron(0 4 * * ? *)
           input:
-            retweet_from_user_id: 'the-times-of-india'
+            retweet_from_user_id: 'SadhguruJV'
             tweet_hashtag: '#SadhguruQuotes'
             time_line_count: 5
 plugins:
   - serverless-python-requirements
-
