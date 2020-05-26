@@ -31,6 +31,7 @@ def re_tweet_a_user_status(event, context):
             if interested_hashtag in user_time_line['full_text']:
                 print(user_time_line['full_text'])
                 twitter.retweet(status="RETWEET FROM MY PERSONAL BOT ASSISTANT", id=user_time_line['id'])
+                twitter.create_favorite(id=user_time_line['id'])
 
     return "BOT FINISHED RE-TWEET SUCCESSFULLY"
 
